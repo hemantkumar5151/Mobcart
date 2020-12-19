@@ -11,7 +11,12 @@ const reviewSchema = new mongoose.Schema({
     comment: {
         type: String,
         required: [true, 'Please enter the comment']
-    }
+    },
+    user: {
+        type: mongoose.Schema.ObjectId,
+        required: [true, 'Please enter user name'],
+        ref: 'User'
+    },
 }, {
     timestamps: true
 } )
